@@ -76,7 +76,6 @@ export default {
         this.characters = results;
         this.pages = info.pages;
       } catch (error) {
-        console.error(error);
         throw new Error(error);
       }
     },
@@ -95,9 +94,7 @@ export default {
     async getCharacter(id){
       let response = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
       this.currentCharacter = await response.json();
-      this.modal = true;
-      console.log(this.currentCharacter, this.modal);
-      
+      this.modal = true;  
 
     }
 
